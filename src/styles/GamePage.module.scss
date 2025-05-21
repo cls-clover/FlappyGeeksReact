@@ -71,8 +71,7 @@
 }
 
 .characterSwiperContainer {
-  width: 100%;
-  max-width: 900px;
+  width: 300px;
   overflow: hidden;
   position: relative;
   padding: 0 50px;
@@ -86,6 +85,7 @@
 
 .characterItem {
   flex-shrink: 0;
+  width: 200px;
 
   background: rgba(0, 0, 0, 0.7);
   border: 2px solid variables.$gold-color;
@@ -128,9 +128,7 @@
 }
 
 .selectBtn {
-  @include button-base.button-base;
-  background: linear-gradient(45deg, #000000, #222222);
-  color: variables.$gold-color;
+  background: variables.$gold-color;
   border: 2px solid variables.$gold-color;
   width: 80%;
   box-shadow: 0 0 10px rgba(variables.$gold-color, 0.2);
