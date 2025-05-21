@@ -61,14 +61,14 @@
   color: #ccc;
 }
 
-/* Строки таблицы */
+
 .tr {
   &:hover {
     background-color: #555;
   }
 }
 
-/* Ссылки (если будут использоваться в таблице, хотя сейчас их нет) */
+
 .a {
   text-decoration: none;
   list-style: none;

@@ -1,10 +1,10 @@
 // src/styles/global.scss
 
-@use 'variables'; // Обновлено: @import -> @use
-@use 'mixins';   // Обновлено: @import -> @use
-@use 'common-page-styles'; // Обновлено: @import -> @use
-@use 'modal-styles';       // Обновлено: @import -> @use
-@use 'button-base';        // Обновлено: @import -> @use
+@use 'variables';
+@use 'mixins';
+@use 'common-page-styles';
+@use 'modal-styles';
+@use 'button-base';
 
 html, body, #root {
   height: 100%;

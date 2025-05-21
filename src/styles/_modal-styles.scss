@@ -1,7 +1,7 @@
 // src/styles/_modal-styles.scss
 
-@use 'variables'; // Используем @use
-@use 'mixins';   // Используем @use
+@use 'variables';
+@use 'mixins';
 @use 'sass:color';
 
 /* Модальные окна */
@@ -12,38 +12,39 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.85);
-  @include mixins.flex-center; // Используем пространство имен
+  @include mixins.flex-center;
   z-index: 1000;
 }
 
 .modalContent {
   background-color: #111;
-  border: 3px solid variables.$gold-color; // Используем пространство имен
+  border: 3px solid variables.$gold-color;
   padding: 30px;
   border-radius: 12px;
   text-align: center;
-  color: variables.$gold-color; // Используем пространство имен
+  color: variables.$gold-color;
   font-size: 20px;
-  box-shadow: 0 0 20px variables.$gold-color; // Используем пространство имен
+  box-shadow: 0 0 20px variables.$gold-color;
 
   input {
     display: block;
     margin: 10px auto;
     padding: 10px;
-    border: 1px solid variables.$gold-color; // Используем пространство имен
+    border: 1px solid variables.$gold-color;
     background: #222;
-    color: variables.$gold-color; // Используем пространство имен
+    color: variables.$gold-color;
     border-radius: 5px;
     width: 220px;
+
     &:focus {
       outline: none;
-      border-color: color.adjust(variables.$gold-color, $lightness: 10%); // Обновлено: lighten() -> color.adjust()
-      box-shadow: 0 0 8px rgba(variables.$gold-color, 0.5); // Используем пространство имен
+      border-color: color.adjust(variables.$gold-color, $lightness: 10%);
+      box-shadow: 0 0 8px rgba(variables.$gold-color, 0.5);
     }
   }
 
   button {
-    background-color: variables.$gold-color; // Используем пространство имен
+    background-color: variables.$gold-color;
     color: #000;
     border: none;
     border-radius: 12px;
@@ -54,9 +55,10 @@
     transition: all 0.3s ease;
 
     &:hover {
-      background-color: color.adjust(variables.$gold-color, $lightness: 5%); // Обновлено: lighten() -> color.adjust()
-      box-shadow: 0 0 10px rgba(variables.$gold-color, 0.7); // Используем пространство имен
+      background-color: color.adjust(variables.$gold-color, $lightness: 5%);
+      box-shadow: 0 0 10px rgba(variables.$gold-color, 0.7);
     }
+
     &:active {
       transform: translateY(1px);
     }
@@ -75,18 +77,17 @@
   }
 }
 
-/* Модальное окно для сообщений (замена alert) */
 .messageBox {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(0, 0, 0, 0.9);
-  color: variables.$gold-color; // Используем пространство имен
+  color: variables.$gold-color;
   padding: 20px 30px;
   border-radius: 10px;
-  border: 2px solid variables.$gold-color; // Используем пространство имен
-  box-shadow: 0 0 20px rgba(variables.$gold-color, 0.7); // Используем пространство имен
+  border: 2px solid variables.$gold-color;
+  box-shadow: 0 0 20px rgba(variables.$gold-color, 0.7);
   z-index: 2000;
   text-align: center;
   font-size: 1.2em;
@@ -94,8 +95,20 @@
 }
 
 @keyframes fadeInOut {
-  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
-  10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  90% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-  100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  10% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  90% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
 }

@@ -19,7 +19,6 @@
   overflow-x: hidden;
 }
 
-/* Кнопка "Назад в меню" */
 .backBtn {
   position: fixed;
   top: 20px;
@@ -37,7 +36,7 @@
   z-index: 1000;
 
   &:hover {
-    background-color: color.adjust(variables.$gold-color, $lightness: 5%); // Обновлено: lighten() -> color.adjust()
+    background-color: color.adjust(variables.$gold-color, $lightness: 5%);
   }
 
   @media (max-width: 768px) {
@@ -48,7 +47,6 @@
   }
 }
 
-/* Анимация для body.loaded (для кнопки "Назад") */
 .loaded {
   .backBtn {
     opacity: 1;

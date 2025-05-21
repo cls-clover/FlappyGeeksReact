@@ -1,6 +1,7 @@
 // src/styles/_button-base.scss
 
-@use 'variables'; // Используем @use
+@use 'variables';
+// Используем @use
 @use 'sass:color';
 
 @mixin button-base {
@@ -24,18 +25,18 @@
 }
 
 @mixin gold-button-hover {
-  background-color: color.adjust(variables.$gold-color, $lightness: 5%); // Обновлено: lighten() -> color.adjust()
-  box-shadow: 0 0 10px rgba(variables.$gold-color, 0.7); // Используем пространство имен
+  background-color: color.adjust(variables.$gold-color, $lightness: 5%);
+  box-shadow: 0 0 10px rgba(variables.$gold-color, 0.7);
 }
 
 @mixin dark-button-hover {
   color: #000000;
-  background: variables.$gold-color; // Используем пространство имен
+  background: variables.$gold-color;
   transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(variables.$gold-color, 0.4); // Используем пространство имен
+  box-shadow: 0 5px 20px rgba(variables.$gold-color, 0.4);
 }
 
 @mixin button-active {
   transform: translateY(0);
-  box-shadow: 0 2px 10px rgba(variables.$gold-color, 0.3); // Используем пространство имен
+  box-shadow: 0 2px 10px rgba(variables.$gold-color, 0.3);
 }
