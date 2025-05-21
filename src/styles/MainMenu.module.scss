@@ -1,0 +1,123 @@
+// src/styles/MainMenu.module.scss
+
+@use 'variables'; // Используем @use
+@use 'mixins';   // Используем @use
+@use 'common-page-styles'; // Используем @use
+@use 'button-base';        // Используем @use
+
+.bodyBackground {
+  @include common-page-styles.body-background-base; // Обновлено: @extend заменен на @include миксина
+  height: 100vh; // Убедимся, что занимает всю высоту
+  padding: 0; // Убираем padding, если он был в common-page-styles
+  justify-content: center; // Центрируем по вертикали
+}
+
+.menuContainer {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 0 20px variables.$gold-color; // Используем пространство имен
+  gap: 20px;
+}
+
+.gameTitle {
+  color: variables.$gold-color; // Используем пространство имен
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 8px #000;
+}
+
+.menuButtons {
+  button {
+    @include button-base.button-base; // Используем базовые стили кнопки
+
+    & {
+      background-color: variables.$gold-color; // Используем пространство имен
+      color: #000000;
+      border: none; // Переопределяем border, если нужно
+      box-shadow: 0 0 10px rgba(variables.$gold-color, 0.2); // Используем пространство имен
+    }
+
+    &:hover {
+      @include button-base.gold-button-hover; // Используем миксин для эффекта наведения
+    }
+  }
+}
+
+.geekChill {
+  font-size: 20px;
+  color: variables.$gold-color; // Используем пространство имен
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.inst {
+  font-size: 15px;
+  color: #000;
+  font-weight: bold;
+  border: 1px solid variables.$gold-color; // Используем пространство имен
+  border-radius: 50px;
+  background-color: variables.$gold-color; // Используем пространство имен
+  @include mixins.flex-center; // Используем пространство имен
+  opacity: 0.9;
+  margin-bottom: 10px;
+  gap: 10px;
+  height: 40px;
+}
+
+.characterBtnDiv {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  z-index: 1000;
+
+  button {
+    @include button-base.button-base; // Используем базовые стили кнопки
+
+    & {
+      background: #000000;
+      color: variables.$gold-color; // Используем пространство имен
+      border: 2px solid variables.$gold-color; // Используем пространство имен
+      width: auto;
+      min-width: 250px;
+      box-shadow: 0 0 15px rgba(variables.$gold-color, 0.2); // Используем пространство имен
+    }
+
+    &:hover {
+      @include button-base.dark-button-hover; // Используем миксин для эффекта наведения
+    }
+
+    &:active {
+      @include button-base.button-active; // Используем миксин для эффекта активации
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .menuContainer {
+    padding: 30px;
+    margin: 20px;
+    width: 90%;
+  }
+
+  .gameTitle {
+    font-size: 36px;
+  }
+
+  .menuButtons button {
+    // Стили из button-base уже применены, если нужно переопределить
+  }
+
+  .characterBtnDiv {
+    bottom: 20px;
+    padding: 15px;
+
+    button {
+      min-width: 200px;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+// src/styles/_button-base.scss
+
+@use 'variables'; // Используем @use
+@use 'sass:color';
+
+@mixin button-base {
+  border: none;
+  border-radius: 12px;
+  padding: 15px 30px;
+  font-size: 18px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  & {
+    @media (max-width: 768px) {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  }
+}
+
+@mixin gold-button-hover {
+  background-color: color.adjust(variables.$gold-color, $lightness: 5%); // Обновлено: lighten() -> color.adjust()
+  box-shadow: 0 0 10px rgba(variables.$gold-color, 0.7); // Используем пространство имен
+}
+
+@mixin dark-button-hover {
+  color: #000000;
+  background: variables.$gold-color; // Используем пространство имен
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(variables.$gold-color, 0.4); // Используем пространство имен
+}
+
+@mixin button-active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(variables.$gold-color, 0.3); // Используем пространство имен
+}

@@ -1,0 +1,20 @@
+// src/styles/global.scss
+
+@use 'variables'; // Обновлено: @import -> @use
+@use 'mixins';   // Обновлено: @import -> @use
+@use 'common-page-styles'; // Обновлено: @import -> @use
+@use 'modal-styles';       // Обновлено: @import -> @use
+@use 'button-base';        // Обновлено: @import -> @use
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+}

@@ -1,0 +1,57 @@
+// src/styles/_common-page-styles.scss
+
+@use 'variables';
+@use 'mixins';
+@use 'sass:color';
+
+@mixin body-background-base {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  background: url('../assets/img/background.png') no-repeat center center fixed;
+  background-size: cover;
+  color: variables.$gold-color;
+  @include mixins.flex-center;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Кнопка "Назад в меню" */
+.backBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: variables.$gold-color;
+  color: #222;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.8s ease, transform 0.8s ease, background-color 0.3s;
+  z-index: 1000;
+
+  &:hover {
+    background-color: color.adjust(variables.$gold-color, $lightness: 5%); // Обновлено: lighten() -> color.adjust()
+  }
+
+  @media (max-width: 768px) {
+    top: 10px;
+    left: 10px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Анимация для body.loaded (для кнопки "Назад") */
+.loaded {
+  .backBtn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

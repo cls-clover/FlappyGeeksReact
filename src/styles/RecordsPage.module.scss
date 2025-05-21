@@ -1,0 +1,76 @@
+// src/styles/RecordsPage.module.scss
+
+@use 'variables';
+@use 'mixins';
+@use 'common-page-styles'; // Используем общие стили для фона и кнопки "Назад"
+
+/* Глобальные стили для страницы лидерборда */
+.bodyBackground {
+  @include common-page-styles.body-background-base; // Обновлено: @extend заменен на @include миксина
+  padding: 20px; // Добавляем специфичный padding
+}
+
+/* Заголовок таблицы */
+.h1 {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2.5em;
+  text-shadow: 0 0 10px rgba(variables.$gold-color, 0.5);
+
+  @media (max-width: 768px) {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+}
+
+/* Таблица */
+.table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 60%;
+  background: #333;
+  box-shadow: 0 0 20px rgba(variables.$gold-color, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (max-width: 1024px) {
+    width: 80%;
+  }
+
+  @media (max-width: 768px) {
+    width: 95%;
+    font-size: 0.9em;
+  }
+}
+
+/* Заголовки таблицы */
+.th {
+  padding: 12px 20px;
+  border: 1px solid variables.$gold-color;
+  text-align: left;
+  background-color: #444;
+  color: variables.$gold-color;
+}
+
+/* Ячейки таблицы */
+.td {
+  padding: 12px 20px;
+  border: 1px solid variables.$gold-color;
+  text-align: left;
+  color: #ccc;
+}
+
+/* Строки таблицы */
+.tr {
+  &:hover {
+    background-color: #555;
+  }
+}
+
+/* Ссылки (если будут использоваться в таблице, хотя сейчас их нет) */
+.a {
+  text-decoration: none;
+  list-style: none;
+  color: #000;
+}
